@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+{# sample Facebook login #}
+<a class="btn btn-lg btn-warning btn-block btn-facebook"
+  href="{% url 'social:begin' backend='facebook'  %}?{{ request.GET.urlencode }}">
+  {% trans 'Facebook Login' %}
+</a>
+
+{% endblock %}
