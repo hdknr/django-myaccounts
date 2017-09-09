@@ -14,11 +14,18 @@ AUTH = dict(
         'social_django.context_processors.login_redirect',
     ],    
     APPS=[
-        'social_django',
+        'social_django',        # Social Login
+        'oauth2_provider',      # OAuth2 Provider
+        'corsheaders',          # OAuth2 Provider
         'myaccounts',
     ],
     AUTHENTICATION_BACKENDS=[
         'social_core.backends.facebook.FacebookOAuth2',     # Facebook
+        'oauth2_provider.backends.OAuth2Backend',           # OAuth2 Provider
+    ],
+    MIDDLEWARE=[
+      'corsheaders.middleware.CorsMiddleware',              # OAuth2 Provider     
+      'oauth2_provider.middleware.OAuth2TokenMiddleware',   # OAuth2 Provider         
     ],
 )
 
