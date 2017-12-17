@@ -9,7 +9,9 @@ SCRIPTS = glob('scripts/*.py')
 REQUIRES = [
     i.strip() for i in
     open('requirements/pypi.txt').readlines() if i[0] != '#']
-PACKAGES = [i for i in find_packages() if '.' not in i]
+PACKAGES = [
+    i for i in find_packages(exclude=['tests'])
+    if '.' not in i]
 VERSION = getattr(__import__(PACKAGES[0]),  '__version__')
 README = open('README.md').read()
 CLASSIFIERS = [
