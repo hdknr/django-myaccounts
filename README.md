@@ -78,11 +78,9 @@ AUTHENTICATION_BACKENDS = AUTH['AUTHENTICATION_BACKENDS'] + global_settings.AUTH
 ## urls.py
 
 ~~~py
-from myaccounts import urls as accounts_urls
-
 urlpatterns = [
     ...
-    url(r'^accounts/', include(accounts_urls)),
+    path(r'accounts/', include('myaccounts.urls')),
 ]
 
 ~~~
