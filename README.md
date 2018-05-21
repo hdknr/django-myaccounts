@@ -1,7 +1,12 @@
 # django-myaccounts
 
 - SPA(Single Page Application) 
-- based on python social auth(https://github.com/python-social-auth)
+
+based on:
+
+- Python Social Auth(PSA https://github.com/python-social-auth)
+- Django OAuth Toolkit(DOT https://github.com/jazzband/django-oauth-toolkit)
+
 
 ## settings.py
 
