@@ -1,5 +1,5 @@
 {% extends 'accounts/base.html' %}
-{% load i18n bootstrap3 staticfiles %}
+{% load i18n staticfiles %}
 
 {% block accounts_content %}
 {# sample Facebook login #}
@@ -11,9 +11,9 @@
 {# password login #}
 
   <form method="post" class="form-signin form-horizontal" accept-charset="UTF-8"> {% csrf_token %}
-      {% bootstrap_form form layout='horizontal' %}
-      {% buttons submit=_('Sign In') reset=_('Cancle') field_class="col-md-offset-3" %}
-      {% endbuttons %}
+      {{ form }}
+      <button type="submit" name="submit">_('Sign In)</button>
+      <button type="reset" nme="reset">_('Cancel')</button>
   </form>
 
 {% endblock %}
