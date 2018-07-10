@@ -1,7 +1,6 @@
 from django.urls import path, include
 from . import views, api
 
-
 # TODO: profile api: configurable
 
 urlpatterns = [
