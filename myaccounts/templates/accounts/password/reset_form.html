@@ -1,0 +1,16 @@
+{% extends 'accounts/base.html' %}
+{% load i18n staticfiles %}
+
+{% block style %}{{ block.super }}
+{% endblock %}
+
+{% block title %}
+    {% trans 'Password Reset' %}
+{% endblock %}
+
+{% block main %}
+<form action="" method="post" class="form-horizontal">{% csrf_token %}
+    {{ form }}
+    <input class="btn btn-danger" type="submit" value="{% trans 'Reset my password' %}" />
+</form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'accounts/base.html' %}
+{% load i18n staticfiles %}
+
+{% block style %}{{ block.super }}
+{% endblock %}
+
+{% block title %}
+    {% trans 'Password Reset Complete' %}
+{% endblock %}
+
+{% block main %}
+    <a href="{% url 'login' %}" class="btn btn-primary">{% trans 'Login' %}</a>
+{% endblock %}

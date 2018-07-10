@@ -1,0 +1,15 @@
+{% extends 'accounts/base.html' %}
+{% load i18n staticfiles %}
+
+{% block style %}{{ block.super }}
+{% endblock %}
+
+{% block title %}
+    {% trans 'Password Reset Accepted' %}
+{% endblock %}
+
+{% block main %}
+
+    {% trans 'Mail is sent to you' %}
+
+{% endblock %}

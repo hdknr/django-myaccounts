@@ -1,0 +1,23 @@
+{% extends 'accounts/base.html' %}
+{% load i18n staticfiles %}
+
+{% block style %}{{ block.super }}
+{% endblock %}
+
+{% block title %}
+{% trans 'Password Reset Confirm' %}
+{% endblock %}
+
+{% block main %}
+{% if form %}
+<form action="" method="post" class="form-horizontal">{% csrf_token %}
+    {{ form }}
+    <input class="btn btn-danger" type="submit" value="{% trans 'Change my password' %}" />
+</form>
+{% else %}
+<div class="alert alert-danger">
+  <strong>{% trans 'Error' %}</strong> {% trans 'Invalid Password Reset Url' %}
+</div>
+{% endif %}
+
+{% endblock %}
