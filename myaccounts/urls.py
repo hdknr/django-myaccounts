@@ -5,6 +5,7 @@ from . import views, api
 
 urlpatterns = [
     path('password/', include('myaccounts.password.urls')),
+    path('mailaddress/', include('myaccounts.mailaddress.urls')),
     path('social/', include('social.apps.django_app.urls', namespace='social')),
     path('oauth2/api/profile', api.profile, name="api_profile"),
     path('oauth2/', include('oauth2_provider.urls', namespace='oauth2_provider')),

@@ -1,5 +1,6 @@
 from django.urls import re_path, path, include
-from . import views, UIDB64, TOKEN
+from myaccounts.utils import UIDB64, TOKEN
+from . import views
 
 # TODO: profile api: configurable
 
