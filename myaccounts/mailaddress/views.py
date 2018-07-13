@@ -51,3 +51,11 @@ def reset_complete(request, id):
     context = {'mailaddress': instance}
     return render(request, 'accounts/mailaddress/verify_complete.html', context)
 
+
+@login_required
+def index(request):
+    context = dict(
+        mailaddresses=request.user.mailaddress_set.all(),
+    )
+    return render(request, 'accounts/mailaddress/index.html', context)
+    
