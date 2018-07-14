@@ -1,12 +1,7 @@
-from django.contrib.auth import (
-    authenticate, get_user_model, password_validation,
-)
-from django.core.exceptions import (
-    FieldDoesNotExist, ImproperlyConfigured, ValidationError,
-)
+from django.contrib.auth import password_validation
+from django.core.exceptions import ValidationError
 from .exceptions import UserExistsException
 from .utils import available_username
-
 
 
 def validate_usernname(username, username_validators=None):
