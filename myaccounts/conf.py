@@ -18,3 +18,4 @@ PASSWORD_RESET_PARAMS = getattr(
     )
 )
 
+LOGIN_REDIRECT_URL = getattr(settings, 'LOGIN_REDIRECT_URL', 'password_change_done')

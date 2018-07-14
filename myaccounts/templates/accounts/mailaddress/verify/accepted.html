@@ -1,0 +1,17 @@
+{% extends 'accounts/base.html' %}
+{% load i18n staticfiles %}
+
+{% block style %}{{ block.super }}
+{% endblock %}
+
+{% block title %}
+    {% trans 'Mail Address Ownership Accepted' %}
+{% endblock %}
+
+{% block main %}
+
+A request to verify email address ownership is accepted, 
+and an email has been sent to the requested address.
+
+Please click the URL in the email  and verify your ownership.
+{% endblock %}

@@ -31,3 +31,7 @@ class SetPasswordForm(auth_forms.SetPasswordForm):
     def save(self, *args, **kwargs):
         self.user.is_active = True    
         return super(PasswordResetConfirmForm, self).save(*args, **kwargs)
+
+
+class PasswordChangeForm(auth_forms.PasswordChangeForm):
+    pass

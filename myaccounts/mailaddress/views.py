@@ -16,17 +16,17 @@ def verify_form(request):
     form = forms.VerificationForm(request.POST or None)
     if form.is_valid():
         form.save(request.user, context)        # Send Email
-        return redirect('mailaddress-verify-accepted')
+        return redirect('mailaddress/verify/accepted')
 
     context = dict(
         form=form,
     )
-    return render(request, 'accounts/mailaddress/verify_form.html', context)
+    return render(request, 'accounts/mailaddress/verify/form.html', context)
 
 
 @login_required
 def verify_accepted(request):
-    return render(request, 'accounts/mailaddress/verify_accepted.html')
+    return render(request, 'accounts/mailaddress/verify/accepted.html')
 
 
 @login_required
@@ -36,11 +36,11 @@ def verify_confirm(request, id, uidb64, token):
         user=request.user, id=id).first()
 
     if not instance or request.user != get_user_from_token(uidb64, token):
-        return render(request, 'accounts/mailaddress/verify_error.html')
+        return render(request, 'accounts/mailaddress/verify/error.html')
 
     instance.is_verified = True
     instance.save()
-    return redirect('mailaddress-verify-complete', id=instance.id)
+    return redirect('mailaddress/verify/complete', id=instance.id)
 
 
 @login_required
@@ -49,7 +49,7 @@ def reset_complete(request, id):
     if not instance:
         return render('accounts/mailaddress/verify_error.html')
     context = {'mailaddress': instance}
-    return render(request, 'accounts/mailaddress/verify_complete.html', context)
+    return render(request, 'accounts/mailaddress/verify/complete.html', context)
 
 
 @login_required

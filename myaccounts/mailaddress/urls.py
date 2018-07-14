@@ -5,10 +5,10 @@ from . import views
 
 urlpatterns = [
     path('api/', include('myaccounts.mailaddress.api')),
-    path('verify', views.verify_form, name="mailaddress-verify-form"),
-    path('verify/accepted', views.verify_accepted, name="mailaddress-verify-accepted"),
+    path('verify', views.verify_form, name="mailaddress/verify/form"),
+    path('verify/accepted', views.verify_accepted, name="mailaddress/verify/accepted"),
     re_path(f'verify/confirm/(?P<id>\d+)/{UIDB64}/{TOKEN}/$', 
-            views.verify_confirm, name="mailaddress-verify-confirm"),
-    path('verify/complete/<int:id>', views.reset_complete, name="mailaddress-verify-complete"),
-    path('', views.index, name="mailaddress-index"),
+            views.verify_confirm, name="mailaddress/verify/confirm"),
+    path('verify/complete/<int:id>', views.reset_complete, name="mailaddress/verify/complete"),
+    path('', views.index, name="mailaddress/index"),
 ]

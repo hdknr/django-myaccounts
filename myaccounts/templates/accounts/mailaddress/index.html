@@ -1,0 +1,26 @@
+{% extends 'accounts/base.html' %}
+{% load i18n staticfiles %}
+
+{% block style %}{{ block.super }}
+{% endblock %}
+
+{% block title %}
+    {%}
+{% endblock %}
+
+{% block main %}
+<ul>
+    {% for mailaddress in mailaddresses %}
+    <li>
+        {{ mailaddress }}
+    </li>
+    {% endfor %}
+</ul>
+
+<h4>New</h4>
+<form action="{% url 'mailaddress/verify/form' %}" method="post" class="form-horizontal">
+    {% csrf_token %}
+    <input type="email" name="address">
+    <input class="btn btn-danger" type="submit" value="{% trans 'Verify Address' %}" />
+</form>
+{% endblock %}

@@ -1,4 +1,4 @@
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model, models
 from django.utils.encoding import force_text, force_bytes
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
@@ -37,3 +37,7 @@ def get_email_context(request):
         site_name=site.name,
         domain=site.domain,
     )
+
+
+def available_username(name):
+    return not models.User.objects.filter(username=name).exists()
