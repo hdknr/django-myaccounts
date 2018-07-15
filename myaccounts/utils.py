@@ -28,9 +28,10 @@ def create_user_token(user, token_generator=default_token_generator):
     )
 
 
-def get_email_context(request):
+def get_email_context(request=None):
     site = get_current_site(request)
-    protocol = request.META.get('HTTP_X_FORWARDED_PROTOCOL', 'http')
+    protocol = request and request.META.get('HTTP_X_FORWARDED_PROTOCOL', None) or 'http'
+    # TODO:  default https
     return dict(
         request=request, 
         protocol=protocol,

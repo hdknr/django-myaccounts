@@ -4,6 +4,7 @@ from . import views, api
 # TODO: profile api: configurable
 
 urlpatterns = [
+    path('signup/', include('myaccounts.signup.urls')),
     path('password/', include('myaccounts.password.urls')),
     path('mailaddress/', include('myaccounts.mailaddress.urls')),
     path('social/', include('social.apps.django_app.urls', namespace='social')),
