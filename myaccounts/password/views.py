@@ -18,13 +18,12 @@ def reset_form(request):
         return auth_views.password_reset(
             request,
             password_reset_form=forms.PasswordResetForm,    # Custom Form
-            post_reset_redirect='password-reset-accepted',
+            post_reset_redirect='password/reset/accepted',
             template_name='accounts/password/reset/form.html',
             extra_email_context=extra_email_context,
             **conf.PASSWORD_RESET_PARAMS)
 
     except:
-        print(traceback.format_exc())
         logger.error(traceback.format_exc())
         return render(
             request,
@@ -44,7 +43,7 @@ def reset_confirm(request, uidb64, token):
         request, uidb64=uidb64, token=token,
         template_name='accounts/password/reset/confirm.html',
         set_password_form=forms.PasswordResetConfirmForm,
-        post_reset_redirect='password-reset-complete',
+        post_reset_redirect='password/reset/complete',
         extra_context=None)
 
 

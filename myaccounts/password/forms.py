@@ -7,7 +7,6 @@ class PasswordResetForm(auth_forms.PasswordResetForm):
     def send_mail(self, subject_template_name, email_template_name,
                   context, from_email, to_email, html_email_template_name=None):
         # Not called if the user has NO email.
-
         if conf.SIGNAL_MAIL:
             # Application will send an email
             signals.password_reset_mail.send(
@@ -30,6 +29,13 @@ class SetPasswordForm(auth_forms.SetPasswordForm):
 
     def save(self, *args, **kwargs):
         self.user.is_active = True    
+        return super(PasswordResetConfirmForm, self).save(*args, **kwargs)
+
+
+class PasswordResetConfirmForm(auth_forms.SetPasswordForm):
+
+    def save(self, *args, **kwargs):
+        self.user.is_active = True      # Activate again
         return super(PasswordResetConfirmForm, self).save(*args, **kwargs)
 
 
