@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-15 15:42+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: exceptions.py:6
+#, python-brace-format
+msgid "User {user} already exists. {message}"
+msgstr "{user} は既に登録済みのログイン名です。{message}"
+
+#: models.py:11
+msgid "Mail Address"
+msgstr ""
+
+#: models.py:12
+msgid "Mail Addresses"
+msgstr ""
+
+#: password/views.py:32
+msgid "Failed to send password reset error"
+msgstr ""
+
+#: templates/accounts/auth/login.html:8
+msgid "Facebook Login"
+msgstr ""
+
+#: templates/accounts/mailaddress/index.html:24
+#: templates/accounts/mailaddress/verify/form.html:15
+msgid "Verify Address"
+msgstr ""
+
+#: templates/accounts/mailaddress/verify/accepted.html:8
+msgid "Mail Address Ownership Accepted"
+msgstr ""
+
+#: templates/accounts/mailaddress/verify/complete.html:8
+msgid "Mail Address Ownership is verified"
+msgstr ""
+
+#: templates/accounts/mailaddress/verify/error.html:8
+msgid "Error Mail Address Ownership"
+msgstr ""
+
+#: templates/accounts/mailaddress/verify/form.html:8
+msgid "Mail Address Ownership"
+msgstr ""
+
+#: templates/accounts/password/reset/accepted.html:8
+msgid "Password Reset Accepted"
+msgstr ""
+
+#: templates/accounts/password/reset/accepted.html:13
+msgid "Mail is sent to you"
+msgstr ""
+
+#: templates/accounts/password/reset/complete.html:8
+msgid "Password Reset Complete"
+msgstr ""
+
+#: templates/accounts/password/reset/complete.html:12
+msgid "Login"
+msgstr ""
+
+#: templates/accounts/password/reset/confirm.html:8
+msgid "Password Reset Confirm"
+msgstr ""
+
+#: templates/accounts/password/reset/confirm.html:15
+msgid "Change my password"
+msgstr ""
+
+#: templates/accounts/password/reset/confirm.html:19
+msgid "Error"
+msgstr ""
+
+#: templates/accounts/password/reset/confirm.html:19
+msgid "Invalid Password Reset Url"
+msgstr ""
+
+#: templates/accounts/password/reset/error.html:8
+msgid "Password Reset Error"
+msgstr ""
+
+#: templates/accounts/password/reset/orm.html:8
+msgid "Password Reset"
+msgstr ""
+
+#: templates/accounts/password/reset/orm.html:14
+msgid "Reset my password"
+msgstr ""
